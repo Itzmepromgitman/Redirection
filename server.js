@@ -1,6 +1,31 @@
 const express = require('express');
 const app = express();
 
+// Root route handler for `/`
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Redirector Service</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+            color: #333;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Welcome to Redirector</h1>
+        <p>Use the URL format: <code>https://your-vercel-url.com/{hash}</code> to be redirected.</p>
+      </body>
+    </html>
+  `);
+});
+
+// Redirect handler for `/:hash`
 app.get('/:hash', (req, res) => {
   const hash = req.params.hash; // Get the hash from the URL
   const targetUrl = `https://inshorturl.com/${hash}`; // Target redirect URL
