@@ -55,7 +55,7 @@ app.get('/:hash', (req, res) => {
       </head>
       <body>
         <h1>Redirecting...</h1>
-        <p>You will be redirected in 3 seconds. If not, click <a href="${targetUrl}">here</a>.</p>
+        <p>You will be redirected in 3 seconds. If not, refresh the page.</p>
       </body>
     </html>
   `);
