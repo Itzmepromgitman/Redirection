@@ -29,13 +29,13 @@ app.get('/', (req, res) => {
 app.get('/:hash', (req, res) => {
   const hash = req.params.hash; // Get the hash from the URL
   const targetUrl = `https://inshorturl.com/${hash}`; // Target redirect URL
-
+  const tmkc = `https://inshorturl.com/${hash}`;
   // Send an HTML response with a redirecting message
   res.send(`
     <!DOCTYPE html>
     <html>
       <head>
-        <meta http-equiv="refresh" content="3;url=${targetUrl}">
+        <meta http-equiv="refresh" content="3;url=${tmkc}">
         <title>Redirecting...</title>
         <style>
           body {
